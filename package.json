@@ -1,0 +1,24 @@
+{
+  "name": "todo-crud",
+  "version": "1.0.0",
+  "description": "An todo app API built with mongoDB and express",
+  "main": "server.js",
+  "scripts": {
+    "dev:server": "nodemon server",
+    "start:server": "node server"
+  },
+  "keywords": [
+    "API",
+    "CRUD"
+  ],
+  "author": "Daniel Brai",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
