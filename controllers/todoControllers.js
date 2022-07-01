@@ -4,6 +4,7 @@ const Todo = require('../model/todo')
 // GET To-do list
 const getTodos = async (req, res) => {
     try {
+        // get all the todos from the Todo collection
         const todos = await Todo.find()
         res.status(200).json({"Todos" : todos})
     } catch (error) {
@@ -14,7 +15,7 @@ const getTodos = async (req, res) => {
 // POST a To-do
 const addTodo = async (req, res) => {
 
-    // validate request
+    // check if the body is present
     if (!req.body) {
         return res.status(400).json({"Error": "Todo fields cannot be empty!"})
     }
@@ -47,7 +48,7 @@ const updateTodo = async (req, res) => {
     // destructuring the required fields from the body
     let { title, description } = req.body
 
-    // check if id is present
+    // check if id, title and description are present
     if (!id && !title && !description) {
         return res.status(400).json({"Error": "Missing required field(s) or parameter!"})
     }
